@@ -1,4 +1,4 @@
-import { CornerType, DotType } from "./types";
+import { Corners, CornerType, DotType } from "./types";
 
 export default {
   logo: {
@@ -24,6 +24,7 @@ export default {
   },
   cornersOptions: {
     type: 'square' as CornerType,
-    color: '#000'
+    color: '#000',
+    corners: ['top-left', 'top-right', 'bottom-left'] as Corners[]
   }
 }

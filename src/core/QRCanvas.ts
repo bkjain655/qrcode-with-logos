@@ -346,6 +346,15 @@ export class QRCanvas {
     const canvasContext = this.context
     if (canvasContext) {
       const { nodeQrCodeOptions } = this.options
+      const { corners } = this.options.cornersOptions || defaultOptions.cornersOptions;
+      const cornerIndexs = corners.map(v => {
+        switch(v) {
+          case 'top-left': return [0, 0]
+          case 'bottom-left': return [1, 0]
+          case 'top-right': return [0, 1]
+          case 'bottom-right': return [1, 1]
+        }
+      })
       const margin =
         nodeQrCodeOptions?.margin || defaultOptions.nodeQrCodeOptions.margin
       const count = this.size
@@ -359,11 +368,7 @@ export class QRCanvas {
       /**二维码起始位置y */
       const yBeginning = Math.floor((width - count * dotSize) / 2)
 
-      ;[
-        [0, 0],
-        [1, 0],
-        [0, 1]
-      ].forEach(([column, row]) => {
+      ;cornerIndexs.forEach(([column, row]) => {
         const x = xBeginning + column * dotSize * (count - 7)
         const y = yBeginning + row * dotSize * (count - 7)
         const cornersOptions = this.options.cornersOptions

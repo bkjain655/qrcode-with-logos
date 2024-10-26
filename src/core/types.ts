@@ -85,6 +85,12 @@ export type CornerType =
   | 'circle-star'
   | 'circle-diamond'
 
+export type Corners = 
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right'
+
 export interface Logo {
   src: string
   logoRadius?: number
@@ -121,6 +127,7 @@ export interface BaseOptions {
   cornersOptions?: {
     type?: CornerType
     color?: string
+    corners?:Corners[]
     radius?:
       | number
       | {
