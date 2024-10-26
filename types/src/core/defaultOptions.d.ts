@@ -1,4 +1,4 @@
-import { CornerType, DotType } from "./types";
+import { Corners, CornerType, DotType } from "./types";
 declare const _default: {
     logo: {
         bgColor: string;
@@ -24,6 +24,7 @@ declare const _default: {
     cornersOptions: {
         type: CornerType;
         color: string;
+        corners: Corners[];
     };
 };
 export default _default;

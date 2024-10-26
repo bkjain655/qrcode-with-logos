@@ -53,6 +53,7 @@ export type RotateFigureArgsCanvas = RotateFigureArgs & {
 };
 export type DotType = 'dot' | 'dot-small' | 'tile' | 'rounded' | 'square' | 'diamond' | 'star' | 'fluid' | 'fluid-line' | 'stripe' | 'stripe-row' | 'stripe-column';
 export type CornerType = 'square' | 'rounded' | 'circle' | 'rounded-circle' | 'circle-rounded' | 'circle-star' | 'circle-diamond';
+export type Corners = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 export interface Logo {
     src: string;
     logoRadius?: number;
@@ -88,6 +89,7 @@ export interface BaseOptions {
     cornersOptions?: {
         type?: CornerType;
         color?: string;
+        corners?: Corners[];
         radius?: number | {
             inner: number;
             outer: number;
