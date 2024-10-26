@@ -346,7 +346,7 @@ export class QRCanvas {
     const canvasContext = this.context
     if (canvasContext) {
       const { nodeQrCodeOptions } = this.options
-      const { corners } = this.options.cornersOptions || defaultOptions.cornersOptions;
+      const corners = this.options.cornersOptions.corners || defaultOptions.cornersOptions.corners;
       const cornerIndexs = corners.map(v => {
         switch(v) {
           case 'top-left': return [0, 0]
